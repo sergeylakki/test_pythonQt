@@ -97,9 +97,6 @@ class ContactWindow(QMainWindow):
                     print(table.index(i, 0).data(), table.index(i, 1).data(), table.index(i, 2).data())
                     self.db.create_contact(table.index(i, 0).data(), table.index(i, 1).data(), table.index(i, 2).data())
 
-
-
-
     def create_tables(self, n):
         headers = ["Имя", "Телефон", "Дата рождения"]
         model = QtGui.QStandardItemModel()
@@ -134,10 +131,13 @@ class RegisterUserWindow(QMainWindow):
         password2 = self.window.InputPssword2.text()
         date_birth = self.window.InputDate.date().toPyDate()
         print(name, password, password2, date_birth, date.today())
-        self.db.register_user(name, password, password2, date_birth)
-        self.close()
-        self.contact_window = ContactWindow(self.db)
-        self.contact_window.show()
+        if password == password2:
+            self.db.register_user(name, password, password2, date_birth)
+            self.close()
+            self.contact_window = ContactWindow(self.db)
+            self.contact_window.show()
+        else:
+            print("error password")
         #self.setWindowTitle('Window2')
 
 

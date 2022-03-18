@@ -1,0 +1,13 @@
+1.Устоновить сервер mariadb
+2.sudo apt install mariadb-server
+3.sudo mysql_secure_installation
+4.sudo mariadb
+5.CREATE DATABASE Имя базы данных;
+6.git clone git@github.com:sergeylakki/test_pythonQt.git
+7.python3 venv env
+8.pip install -r requirements.txt
+9.Внести настройки базы данных в settings.py
+10.python3 main.py
+11.Регестрируемся
+12.Добавлять контакты можно редактируя таблицу
+13.Дату вносить в формате год-месяц-день затем нажать сохранить изменения
